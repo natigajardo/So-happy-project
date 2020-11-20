@@ -1,0 +1,69 @@
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg navbar-light nav-home">
+  <div class="container">
+    
+    <div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <%#= link_to 'Productos', products_main_path, class: "nav-link" %> 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ofertas</a>
+        </li>
+      </ul>
+    </div>    
+
+    <div class="mx-auto order-0">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+
+      <%= link_to 'So Happy', root_path, class: "navbar-brand mx-auto" %> 
+    </div>
+       
+    <div class="navbar-nav ml-auto w-100 order-3">
+      <ul class="navbar-nav ml-auto">
+
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown container">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mi menu
+            </a>
+
+            <% if current_user.role == 'user' %>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Mi perfil</a>
+                <a class="dropdown-item" href="#">Mis compras</a>
+                <a class="dropdown-item" href="#">Mis favoritos</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+              </div>
+            <% elsif current_user.role == 'admin' %>  
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to('Mis datos', edit_user_registration_path(@user), class: "dropdown-item" ) %>
+                <%= link_to('Admin', homeAdmin_path, method: :get, class: "dropdown-item") %>
+                <div class="dropdown-divider"></div>
+                <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+              </div>
+            <% end %>  
+          </li>
+
+        <% else %>
+
+          <li class="nav-item">
+            <%= link_to('Sign in', new_user_session_path, class: "nav-link") %>  
+          </li>
+          <li>
+            <%= link_to('Registrate', new_user_registration_path, class: "nav-link") %> 
+          </li>
+
+        <% end %>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
+
