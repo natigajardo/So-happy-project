@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     @products = Product.all
     @users = User.where(role: 'admin')
     @users1 = User.where(role: 'user')
+    @product_instances = ProductInstance.all 
   end
   
 end

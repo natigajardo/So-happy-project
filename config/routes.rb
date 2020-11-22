@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :order_items
-  resources :orders
+  resources :product_instances
   resources :products
   resources :categories
   devise_for :users

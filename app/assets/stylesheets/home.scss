@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
 }
 
@@ -37,7 +37,24 @@ body * {
   // Render products admin
 
   .margin-table-admin {
-  
-
   }
+
+  .contacto{
+    background-color: #BF7160;
+    color: white;
+    padding: 3rem 6rem;
+  }
+
+  .titulo-somos{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  .text-somos{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
 }  

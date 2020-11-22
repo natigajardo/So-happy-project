@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product_instance.price %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @product_instance.size %>
+</p>
+
+<p>
+  <strong>Sold:</strong>
+  <%= @product_instance.sold %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_instance.product %>
+</p>
+
+<%= link_to 'Edit', edit_product_instance_path(@product_instance) %> |
+<%= link_to 'Back', product_instances_path %>

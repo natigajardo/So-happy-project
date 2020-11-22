@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">  
+
     <!-- Font Awesome -->
    <script src="https://kit.fontawesome.com/b8100589e8.js" crossorigin="anonymous"></script>
 
@@ -18,11 +21,9 @@
 
     <%= render 'shared/navbar' %>
 
-    <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
 
   </body>
 </html>

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_and_belongs_to_many :categories
   has_many :variants
+  has_many :product_instances
 
   #si no hay stock, no muestra el producto
   def visible_on_web?

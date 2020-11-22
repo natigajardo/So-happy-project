@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_001338) do
+ActiveRecord::Schema.define(version: 2020_11_21_211031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2020_11_20_001338) do
     t.index ["product_id", "category_id"], name: "index_categories_products_on_product_id_and_category_id"
   end
 
+  create_table "product_instances", force: :cascade do |t|
+    t.decimal "price"
+    t.string "size"
+    t.boolean "sold", default: false
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_instances_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -36,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_11_20_001338) do
     t.datetime "updated_at", null: false
     t.string "author"
     t.integer "status"
-    t.integer "stock"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +63,5 @@ ActiveRecord::Schema.define(version: 2020_11_20_001338) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "product_instances", "products"
 end

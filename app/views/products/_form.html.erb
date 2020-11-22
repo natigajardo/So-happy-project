@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
+  <div class="field pt-2">
+    <%= form.label :sku %>
+    <%= form.text_field :sku, class: "form-control" %>
+  </div>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, class: "form-control" %>
+  </div>
+
   <div class="field pt-2">
     <%= form.label :description %>
     <%= form.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="field pt-2">
-    <%= form.label :price %>
-    <%= form.text_field :price, class: "form-control" %>
-  </div>
-
-  <div class="field pt-2">
-    <%= form.label :sku %>
-    <%= form.text_field :sku, class: "form-control" %>
   </div>
 
   <div class="field pt-3">
