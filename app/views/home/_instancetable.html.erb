@@ -6,6 +6,7 @@
 <table class="table margin-table-admin table-striped table-bordered">
   <thead>
     <tr>
+      <th scope="col">Sku</th>
       <th scope="col">Product</th>
       <th scope="col">Size</th>
       <th scope="col">Price</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @product_instances.each do |product_instance| %>
       <tr>
+        <td><%= product_instance.product.sku %></td>
         <td><%= product_instance.product.name %></td>
         <td><%= product_instance.size %></td>
         <td><%= product_instance.price %></td>
@@ -29,3 +31,5 @@
 </table>
 
 </div>
+
+

@@ -21,14 +21,6 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  def main
-    @products = Product.all
-  end
-
-  def show_product
-  end
-
-
   # POST /products
   # POST /products.json
   def create

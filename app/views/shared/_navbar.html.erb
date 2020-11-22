@@ -8,7 +8,7 @@
           <a class="nav-link" href="#">Nosotros <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <%#= link_to 'Productos', products_main_path, class: "nav-link" %> 
+          <%= link_to 'Productos', products_path, class: "nav-link" %> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ofertas</a>
@@ -35,15 +35,15 @@
 
             <% if current_user.role == 'user' %>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Mi perfil</a>
-                <a class="dropdown-item" href="#">Mis compras</a>
+                <%= link_to('Editar mis datos', edit_user_registration_path(@user), class: "dropdown-item" ) %>
+                <%= link_to('Mis compras', home_orders_user_path, method: :get, class: "dropdown-item")%>
                 <a class="dropdown-item" href="#">Mis favoritos</a>
                 <div class="dropdown-divider"></div>
                 <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
               </div>
             <% elsif current_user.role == 'admin' %>  
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to('Mis datos', edit_user_registration_path(@user), class: "dropdown-item" ) %>
+                <%= link_to('Editar mis datos', edit_user_registration_path(@user), class: "dropdown-item" ) %>
                 <%= link_to('Admin', homeAdmin_path, method: :get, class: "dropdown-item") %>
                 <div class="dropdown-divider"></div>
                 <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "dropdown-item") %>

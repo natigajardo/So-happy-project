@@ -15,12 +15,12 @@ class ProductInstancesController < ApplicationController
   # GET /product_instances/new
   def new
     @product_instance = ProductInstance.new
-    @products = Product.pluck :name, :id
+    @products = Product.pluck :name, :id, :sku
   end
 
   # GET /product_instances/1/edit
   def edit
-    @products = Product.pluck :name, :id
+    @products = Product.pluck :name, :id, :sku
   end
 
   # POST /product_instances

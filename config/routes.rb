@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :product_instances
   resources :products
   resources :categories
@@ -10,10 +11,9 @@ Rails.application.routes.draw do
 
   root to: "home#index"
   get 'home/admin', to: 'home#admin', as: 'homeAdmin'
+  get 'home/orders_user', to: 'home#orders_user', as: 'home_orders_user'
   
-  #Rutas de productos
-  get 'products/main'
-  get 'products/showproduct'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

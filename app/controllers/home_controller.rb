@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @users = User.where(role: 'admin')
     @users1 = User.where(role: 'user')
     @product_instances = ProductInstance.all 
+    @orders = Order.all
+  end
+
+  def orders_user
   end
   
 end

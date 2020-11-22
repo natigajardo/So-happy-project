@@ -14,8 +14,8 @@ class OrdersTest < ApplicationSystemTestCase
     visit orders_url
     click_on "New Order"
 
-    fill_in "Number", with: @order.number
-    fill_in "State", with: @order.state
+    fill_in "Number order", with: @order.number_order
+    fill_in "Product instance", with: @order.product_instance_id
     fill_in "Total", with: @order.total
     fill_in "User", with: @order.user_id
     click_on "Create Order"
@@ -28,8 +28,8 @@ class OrdersTest < ApplicationSystemTestCase
     visit orders_url
     click_on "Edit", match: :first
 
-    fill_in "Number", with: @order.number
-    fill_in "State", with: @order.state
+    fill_in "Number order", with: @order.number_order
+    fill_in "Product instance", with: @order.product_instance_id
     fill_in "Total", with: @order.total
     fill_in "User", with: @order.user_id
     click_on "Update Order"

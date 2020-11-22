@@ -1,0 +1,42 @@
+<%= link_to 'Nueva orden', new_order_path, class: "btn btn-info mt-4" %>
+
+<div class="pt-3 table-responsive">
+
+<table class="table margin-table-admin table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Number order</th>
+      <th scope="col">Date</th>
+      <th scope="col">SKU</th>
+      <th scope="col">Product</th>
+      <th scope="col">Size</th>
+      <th scope="col">Name user</th>
+      <th scope="col">Mail User</th>
+      <th scope="col">Address user</th>
+      <th scope="col">Total</th>
+      <th scope="col">Status order</th>
+      <th scope="col" colspan="3">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.number_order %></td>
+        <td><%= order.created_at %></td>
+        <td><%= order.product_instance.product.sku %></td>
+        <td><%= order.product_instance.product.name %></td>
+        <td><%= order.product_instance.size %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.user.email %></td>
+        <td><%= order.user.address %></td>
+        <td><%= order.total %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
