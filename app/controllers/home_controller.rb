@@ -11,7 +11,5 @@ class HomeController < ApplicationController
     @orders = Order.all
   end
 
-  def orders_user
-  end
   
 end

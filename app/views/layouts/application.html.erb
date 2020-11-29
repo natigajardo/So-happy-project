@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" dir="ltr">
   <head>
-    <title>Ecommerceproject</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">  
+    <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
    <script src="https://kit.fontawesome.com/b8100589e8.js" crossorigin="anonymous"></script>
@@ -21,9 +21,12 @@
 
     <%= render 'shared/navbar' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
 
   </body>
 </html>
+
+
+

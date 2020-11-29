@@ -7,8 +7,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       @user = User.find(params[:id])
+
       if @user.update(user_params)
-        format.html { redirect_to homeAdmin_path, notice: 'Product was successfully updated.' }
+        format.html { redirect_to homeAdmin_path, notice: 'User was successfully updated.' }
       else
         format.html { redirect_to homeAdmin_path, notice: "No se pudo guardar tus datos" }
       end
@@ -20,7 +21,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :role)
   end
-
-
 
 end

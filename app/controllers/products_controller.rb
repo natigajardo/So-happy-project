@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
       if @product.save
 
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        format.json { redirec_to homeAdmin_path, status: :created, location: @product }
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product.destroy
     respond_to do |format|
       if @product.update(product_params)
 
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +72,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :sku, :author, {category_ids: []})
+      params.require(:product).permit(:name, :description, :sku, :author, {category_ids: []}, images: [] )
     end
 end

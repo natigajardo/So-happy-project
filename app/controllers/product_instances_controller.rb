@@ -26,17 +26,21 @@ class ProductInstancesController < ApplicationController
   # POST /product_instances
   # POST /product_instances.json
   def create
-    @product_instance = ProductInstance.new(product_instance_params)
-
-    respond_to do |format|
-      if @product_instance.save
-        format.html { redirect_to @product_instance, notice: 'Product instance was successfully created.' }
-        format.json { render :show, status: :created, location: @product_instance }
-      else
-        format.html { render :new }
-        format.json { render json: @product_instance.errors, status: :unprocessable_entity }
-      end
+    params[:stock].to_i.times do 
+      ProductInstance.create(product_instance_params)
     end
+    redirect_to homeAdmin_path, notice: "Se crearon" + params[:stock]
+    #@product_instance = ProductInstance.new(product_instance_params)
+
+    #respond_to do |format|
+    #  if @product_instance.save
+    #    format.html { redirect_to @product_instance, notice: 'Product instance was successfully created.' }
+    #    format.json { render :show, status: :created, location: @product_instance }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @product_instance.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /product_instances/1

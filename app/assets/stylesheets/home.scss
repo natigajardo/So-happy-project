@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
+  font-family: 'Montserrat', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
 }
@@ -13,25 +14,84 @@ body * {
   padding: 0;
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+.nav-home {
+  min-height: 2rem;
+  background-color: #6F777A;
+  color: white;
+}
+
+.title-center{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+}
+
+.navbar-toggler{
+  width: 3rem;
+  height: 2rem;
+}
+
+.navbar-toggler-icon{
+ width: 1.5rem;
+ margin-top: -0.2rem;
+}
+
+.dropdown-right-align{
+  font-size: 0.6rem;
+  margin-right: -0.5rem;
+}
+
+
+
+
+
+
+// Carrusel 
+
+.carrusel-home{
+  margin-top: -2.65rem;
+}
+
+.contacto{
+  background-color: #BF7160;
+  color: white;
+  padding: 3rem 4rem;
+}
+
+// Section images home
+
+.img1-home{
+  width: 100%;
+} 
+
+
+
+
+//@media (min-width: 768px) {
+
+//}
+
+@media (min-width: 992px) {
 
   // Nav configuration 
 
   .nav-home {
-    height: 4rem;
-    background-color: #F2CAA7;
+    height: 3rem;
+    background-color: #6F777A;
+    color: white;
   }
 
-  .img-banner {
-    background-image: url("1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 1041px;
-    height: 400px;
-    margin-top: -4rem;
-    margin-left: -4rem;
-
+  .title-center{
+    font-size: 2rem;
+    margin-right: 17rem;
   }
+
+  .dropdown-right-align{
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
 
 
   // Render products admin
@@ -58,3 +118,12 @@ body * {
   }
 
 }  
+
+@media (min-width: 1200px) {
+
+  .title-center{
+    font-size: 2rem;
+    margin-right: 28rem;
+  } 
+
+}

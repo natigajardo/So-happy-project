@@ -1,5 +1,52 @@
-<h1>Products</h1>
+<div> 
+  <div class="color-bg-products">
+
+    <!-- Banner products index-->
+    <div>
+      <%=image_tag("banner-3.png", alt: "Responsive image", class: "img-fluid z-depth-1 w-100")%>
+    </div>
+    <hr>
+    <!-- Productos listado -->
+     
+      <div class="container py-4 text-center">
+        <div class="row">
+
+          <% @products.each do |p| %>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mt-4 mx-4" >
+            <!-- Card -->
+            <div class="card medidas-cards-productos">
+
+              <!-- Card image -->
+              <div class="view overlay text-center">
+                <%= image_tag p.images.first.variant(resize: "300x300").processed, alt: "Card image cap" %>
+                <div class="mask rgba-white-slight"></div>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body">
+              <div class="border-bottom"></div>
+                <!-- Title -->
+                <h4 class="card-title pt-3 text-center"><%= p.name %></h4>
+                <hr>
+                <!-- Text -->
+                <p class="card-text text-center">Autor: <%= p.author %></p>
+
+              </div>
+
+              <!-- Card footer -->
+              <div class="rounded-bottom mdb-color lighten-3 text-center pt-3 pb-3">
+                <ul class="list-unstyled list-inline font-small">
+                  <li class="list-inline-item pr-2 white-text w-100"> <%= link_to 'Ver más', p, class: "btn btn-info" %></li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>  
+          <% end %>
+        </div>  
+      </div>  
+    <!-- Fin card -->
+  </div>    
+</div>
 
 
-
- 

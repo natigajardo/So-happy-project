@@ -29,8 +29,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan'
 gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store'
+
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+ gem 'mini_magick', '~> 4.8'
+ gem 'activestorage-validator'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
